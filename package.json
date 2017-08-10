@@ -9,6 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "js-sdk": "github:retsly/js-sdk",
     "ndarray": "^1.0.18"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.20"
   }
 }
