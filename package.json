@@ -6,13 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Gareth",
   "license": "ISC",
   "dependencies": {
     "js-sdk": "github:retsly/js-sdk",
     "ndarray": "^1.0.18"
   },
   "devDependencies": {
-    "@types/node": "^8.0.20"
+    "@types/node": "^8.0.20",
+    "mocha": "^3.5.0"
+  },
+  "scripts": {
+    "test": "mocha"
   }
 }
