@@ -1,14 +1,21 @@
-function foo (num) {
-  console.log('foo: ' + num)
-  this.count++
+function Rectangle (x, y) {
+  this._length = x
+  this._breadth = y
 }
 
-foo.count = 0
-
-for (var i = 0; i < 10; i++) {
-  if (i > 5) {
-    foo.call(foo, i)
-  }
+Rectangle.prototype.getDimensions = function () {
+  return { length: this._length, breadth: this._breadth}
 }
 
-console.log(foo.count)
+Rectangle.prototype.setDimensions = function (len, bred) {
+  this._length = len
+  this._breadth = bred
+}
+
+var r = new Rectangle(10, 20)
+
+// console.log(r.getDimensions())
+// r.setDimensions(100, 200)
+// console.log(r.getDimensions())
+// console.log(typeof r, typeof Rectangle)
+// console.log(r)
