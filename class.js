@@ -1,13 +1,13 @@
 class ClassPerson {
-  constructor(name) {
+  constructor (name) {
     this.name = name
   }
 
-  static iAmAClass() {
+  static iAmAClass () {
     return true
   }
 
-  greet() {
+  greet () {
     return `Hi, ${this.name}`
   }
 }
@@ -18,12 +18,11 @@ ClassPerson.prototype.greet = function () {
   return `Hello, ${this.name}`
 }
 
-
-function PrototypePerson(name) {
+function PrototypePerson (name) {
   this.name = name
 }
 
-PrototypePerson.iAmAClass = function() {
+PrototypePerson.iAmAClass = function () {
   return false
 }
 
