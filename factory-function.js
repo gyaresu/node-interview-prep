@@ -8,6 +8,6 @@ const dog = (dogName) => {
 }
 
 const sniffles = dog('Bob')
-
+debugger
 sniffles.talk()
 sniffles.greeting()

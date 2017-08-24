@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "ava"
   },
   "author": "Gareth",
   "license": "ISC",
@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@types/node": "^8.0.20",
-    "babel-cli": "^6.26.0",
-    "mocha": "^3.5.0"
+    "ava": "^0.22.0",
+    "babel-cli": "^6.26.0"
   }
 }
