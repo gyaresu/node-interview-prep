@@ -8,4 +8,6 @@ function countDown (args) {
   }
 }
 
+// 17885 is the largest number before hitting
+// "RangeError: Maximum call stack size exceeded"
 countDown(17886)
