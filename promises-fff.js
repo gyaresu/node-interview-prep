@@ -45,3 +45,43 @@ loadImageCallbacked('images/cat3.jpg', (error, img1) => {
     })
   })
 })
+
+// loadImage function as callback
+function loadImage (url, callback) {
+  let image = new Image()
+
+  image.onload = function () {
+    callback(null, image)
+  }
+
+  image.onerror = function () {
+    let message =
+      `Could not load image at ${url}`
+    callback(new Error(msg))
+  }
+
+  image.src = url
+}
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
+export default loadImage // There is only a single default export per module
+
+/* loadImage rewritten to use a Promise */
+function loadImage (url, callback) {
+  return new Promise((resolve, reject) => { // resolve and reject are both functions
+    let image = new Image() // https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/Image
+
+    image.onload = function () { // success
+      // callback(null, image)
+      resolve(image) // call resolve with success image
+    }
+
+    image.onerror = function () {
+      let message =
+        `Could not load image at ${url}`
+      // callback(new Error(msg))
+      reject(new Error(msg))
+    }
+
+    image.src = url
+  })
+}
