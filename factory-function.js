@@ -11,4 +11,3 @@ const sniffles = dog('Bob')
 
 sniffles.talk()
 sniffles.greeting()
-
