@@ -23,7 +23,7 @@ loadImagePromised('images/cat3.jpg',
   })
 
 // as callback hell / christmas tree of doom
-import loadImageCallbacked
+import loadImage
 from '.load-image-callbacked'
 
 let addImg = (src) => {
@@ -33,13 +33,13 @@ let addImg = (src) => {
   document.body.appendChild(imgElement)
 }
 
-loadImageCallbacked('images/cat3.jpg', (error, img1) => {
+loadImage('images/cat3.jpg', (error, img1) => {
   if (error) throw error
   addImg(img1.src)
-  loadImageCallbacked('images/cat2.jpg', (error, img2) => {
+  loadImage('images/cat2.jpg', (error, img2) => {
     if (error) throw error
     addImg(img2.src)
-    loadImageCallbacked('images/cat3.jpg', (error, img3) => {
+    loadImage('images/cat3.jpg', (error, img3) => {
       if (error) throw error // well this is a mess...
       addImg(img3.src)
     })
@@ -62,6 +62,8 @@ function loadImage (url, callback) {
 
   image.src = url
 }
+
+/* --- Load Image function --- */
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
 export default loadImage // There is only a single default export per module
 
@@ -85,3 +87,35 @@ function loadImage (url, callback) {
     image.src = url
   })
 }
+
+/* --- app.js that relies on Promises from loadImage --- */
+import loadImage
+from '.load-image-callbacked'
+
+let addImg = (src) => {
+  let imgElement =
+    document.createElement('img')
+  imgElement.src = img.src
+  document.body.appendChild(imgElement)
+}
+
+// loadImage returns promises so you need to call `then` on the result.
+// But this is still a nested mess
+loadImage('images/cat3.jpg').then(img => {
+  addImg(img1.src)
+  loadImage('images/cat2.jpg').then(img2 => {
+    addImg(img2.src)
+    loadImage('images/cat3.jpg').then(img3 => {
+      addImg(img3.src)
+    })
+  })
+})
+
+// un-nesting the loadImage calls
+Primise.all([
+  loadImage('images/cat1.jpg'),
+  loadImage('images/cat2.jpg'),
+  loadImage('images/cat3.jpg')
+]).then(images => { // it's an array or results
+  images.forEach(image => addImage(image.src)) // each image gets added only when all are successfully returned
+})

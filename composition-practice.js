@@ -26,9 +26,12 @@ const zombie = (name) => {
   )
 }
 
+let z = zombie('gareth')
+
 console.log(
-  JSON.stringify(zombie('bob').run()),
-  JSON.stringify(zombie('bob').stumble()),
-  JSON.stringify(zombie('bob').brains()),
-  JSON.stringify(zombie('bob'))
+  JSON.stringify(z), // {}
+  JSON.stringify(zombie('bob').run()), // "bob"
+  JSON.stringify(zombie('bob').stumble()), // 90
+  JSON.stringify(zombie('bob').brains()), // 100
+  JSON.stringify(zombie('bob')) // {}
 )
