@@ -89,8 +89,7 @@ function loadImage (url, callback) {
 }
 
 /* --- app.js that relies on Promises from loadImage --- */
-import loadImage
-from '.load-image-callbacked'
+import loadImage from '.load-image'
 
 let addImg = (src) => {
   let imgElement =
@@ -118,4 +117,6 @@ Primise.all([
   loadImage('images/cat3.jpg')
 ]).then(images => { // it's an array or results
   images.forEach(image => addImage(image.src)) // each image gets added only when all are successfully returned
+}).catch((error) => {
+  // handle error
 })

@@ -9,6 +9,7 @@
   "author": "Gareth",
   "license": "ISC",
   "dependencies": {
+    "highland": "^2.11.1",
     "js-sdk": "github:retsly/js-sdk",
     "lodash": "^4.17.4",
     "ndarray": "^1.0.18"
