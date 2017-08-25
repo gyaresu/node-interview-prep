@@ -27,3 +27,18 @@ let data = _(filenames) // creates a stream from an array of filenames
     console.log(fileContent.toString()) // file content is a buffer
   })
 
+let arr = _([1, 2, 3, 4, 5]).map(x => {
+  return `${x}\n`
+})
+
+let output = fs.createWriteStream('output.txt')
+let output2 = fs.createWriteStream('output2.txt')
+
+arr.pipe(output)
+
+let arr2 = _([1, 2, 3, 4, 5])
+  .map(x => {
+    return `${x + 2}\n`
+  })
+
+arr2.pipe(output2) // arr2 is a highland readstream which then pipes to output2 which is a node writestream
