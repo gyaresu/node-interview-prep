@@ -1,11 +1,11 @@
 
-function delay(ms) {
+function delay (ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 
-async function waitNTimes(n) {
+async function waitNTimes (n) { // async
   for (var i = 0; i < n; i++) {
-    await delay(100)
+    await delay(100) // await
   }
   return 'done'
 }

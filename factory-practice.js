@@ -6,9 +6,9 @@ const parent = {
 }
 
 // a function which returns a new object with assigned properties from parent
-const child = (name) => {
+const child = (fish) => { // arg is string
   let c = Object.create(parent)
-  let assigned = Object.assign(c, {name}) // ES6 syntax magic for creating object key/val(?)
+  let assigned = Object.assign(c, {fish}) // ES6 syntax magic for creating object key/val(?) {name: 'bob'}
   console.log(assigned) // { name: 'bob' }
   return assigned
 }

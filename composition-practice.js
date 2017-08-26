@@ -28,6 +28,11 @@ const zombie = (name) => {
 
 let z = zombie('gareth')
 
+console.log(z.stumble()) // 90
+console.log(z.stumble()) // 80
+console.log(z.stumble()) // 70
+console.log(z.stumble()) // 60
+
 console.log(
   JSON.stringify(z), // {}
   JSON.stringify(zombie('bob').run()), // "bob"
