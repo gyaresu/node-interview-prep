@@ -34,7 +34,7 @@ console.log(z.stumble()) // 70
 console.log(z.stumble()) // 60
 
 console.log(
-  JSON.stringify(z), // {}
+  JSON.stringify(z), // {} empty object with only private and internal state
   JSON.stringify(zombie('bob').run()), // "bob"
   JSON.stringify(zombie('bob').stumble()), // 90
   JSON.stringify(zombie('bob').brains()), // 100
