@@ -1,6 +1,6 @@
 var o = { p: 'foo' };
 (function (n) {
-  n = { x: 'bar' }
+  n = { x: 'bar' } // { x: 'bar' } 
   console.log(n)
-})(o)
-console.log(o)
+})(o) // IIFE
+console.log(o) // { p: 'foo' }
