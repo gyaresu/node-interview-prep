@@ -3,4 +3,4 @@ function greetMe () {
   console.log('Hello, ' + me + '!')
 }
 me = 'Batman'
-greetMe()
+greetMe() // thing to remmember here is 'at runtime'
